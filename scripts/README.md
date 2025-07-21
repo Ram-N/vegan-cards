@@ -1,310 +1,122 @@
-# Scripts Directory - Activities Management
+# Vegan Cards Scripts
 
-This directory contains utility scripts for managing activities in the Tick-Tock project.
+This directory contains utility scripts for the Vegan Cards application.
 
-## Activities Generation Workflow
+## Create Translation JSON
 
-### Overview
-The `convert_activities_in_sheets_to_JSON.py` script converts a Google Sheets spreadsheet into the complex JSON structure required by the app. This allows for easy, human-friendly editing of activities without dealing with JSON syntax.
+The `create_translation_json.py` script reads data from a Google Sheet and creates a properly formatted JSON file for the Vegan Cards application.
 
 ### Prerequisites
-1. **Dependencies**: The script uses `uv` to manage Python dependencies automatically
-2. **Google Sheet Setup**:
-   - Sheet name: `finitude_activities_ram`
-   - Make it publicly readable: Share → "Anyone with the link can view"
-   - Current sheet URL is already configured in the script
 
-### Google Sheets Structure
+1. Python 3.6+
+2. Required Python packages:
+   ```
+   pip install requests
+   ```
 
-Your Google Sheets header row should be:
-```
-name | category | frequency | description | icon | age_start | age_end | color | is_active | user_created
-```
+3. A Google Sheet with the following columns:
+   - `Language 1` - The primary language name (e.g., "English")
+   - `English Phrase` - The phrase in the primary language
+   - `Language 2` - The secondary language name (e.g., "Spanish")
+   - `Translation` - The translated phrase
+   - `Category` (optional) - The category for the phrase (e.g., "restaurant", "shopping")
+   - `Tags` (optional) - Comma-separated list of tags for the phrase
 
-**Required columns** (must have these three):
-- `name` - The display name of the activity
-- `category` - Category type (see below for options)
-- `frequency` - How often it occurs (see formats below)
+4. The Google Sheet must be published to the web (File > Share > Publish to web)
 
-**Optional columns**:
-- `description` - Detailed description of the activity
-- `icon` - Custom emoji icon (overrides category default)
-- `age_start` - Starting age (default: 0)
-- `age_end` - Ending age (when provided, sets `flexible_end=false`)
-- `color` - Custom hex color (overrides category default)
-- `is_active` - Whether activity is active (true/false, default: true)
-- `user_created` - Whether user created this activity (true/false, default: true)
+### Usage
 
-### Key Age Range Logic
-
-- **`age_start`**: Age when activity becomes relevant (0 = from birth)
-- **`age_end`**: Age when activity stops being relevant (empty = continues until death)
-- **`flexible_end`**: Automatically set to `false` when `age_end` is provided, `true` when empty
-
-Examples:
-- `age_start=0, age_end=` → Activity for entire life (`flexible_end=true`)
-- `age_start=18, age_end=65` → Career activity (`flexible_end=false`)
-- `age_start=5, age_end=` → Activity starting at age 5 until death (`flexible_end=true`)
-
-### Categories and Their Defaults
-
-| Category | Default Color | Default Icon |
-|----------|--------------|--------------|
-| celebration | #FFD700 | 🎉 |
-| nature | #FF6347 | 🌳 |
-| routine | #4A90E2 | ☕ |
-| exercise | #2ECC71 | 💪 |
-| social | #E74C3C | 👥 |
-| learning | #9B59B6 | 📚 |
-| travel | #1ABC9C | ✈️ |
-| food | #F39C12 | 🍽️ |
-| work | #34495E | 💼 |
-| hobby | #16A085 | 🎨 |
-| relationships | #9370DB | 💭 |
-| health | #32CD32 | 🏃 |
-| personal_growth | #4169E1 | 🎓 |
-| entertainment | #8A2BE2 | 🎵 |
-| experiences | #DC143C | 🍽️ |
-| reflection | #8B4513 | 📔 |
-| universal | #87CEEB | 🌅 |
-| daily_life | #8B4513 | ☕ |
-
-### Frequency Formats
-
-The script accepts flexible frequency formats:
-- `1/year`, `12/year`, `52/year`, `365/year`
-- `1/week`, `2/week` (converted to per year)
-- `1/month`, `6/month` (converted to per year)
-- `daily`, `weekly`, `monthly`, `yearly`
-- `everyday`, `every week`, `every month`
-
-## Usage Examples
-
-### Basic Usage (Recommended)
+Basic usage:
 
 ```bash
-# Generate activities to imported-activities.json (safe default)
-npm run generate-activities
-
-# OR using uv directly
-uv run python scripts/convert_activities_in_sheets_to_JSON.py
+python create_translation_json.py
 ```
-- **Output**: `src/data/activities/imported-activities.json`
-- **Safe**: Won't overwrite your default activities
-- **Backup**: Not needed since it creates a new file
 
-### Replace Default Activities
+This will use the default spreadsheet ID and create the file at `src/data/cards/vegan-phrases.json`.
+
+Custom options:
 
 ```bash
-# Replace default-activities.json with backup
-npm run generate-activities -- --replace-default
-
-# OR using uv directly
-uv run python scripts/convert_activities_in_sheets_to_JSON.py --replace-default
-```
-- **Output**: `src/data/activities/default-activities.json`
-- **Backup**: Automatically creates backup file (e.g., `default-activities.backup.1731234567.json`)
-- **Use when**: You want to completely replace the default activities
-
-### Testing and Validation
-
-```bash
-# Dry run - see output without writing files
-npm run generate-activities -- --dry-run
-
-# OR using uv directly
-uv run python scripts/convert_activities_in_sheets_to_JSON.py --dry-run
-```
-- **Output**: Console only (no file created)
-- **Use when**: Testing your Google Sheets changes before committing
-
-### Custom Filename
-
-```bash
-# Custom filename in activities directory
-npm run generate-activities -- --filename my-activities.json
-
-# OR using uv directly
-uv run python scripts/convert_activities_in_sheets_to_JSON.py --filename my-activities.json
-```
-- **Output**: `src/data/activities/my-activities.json`
-- **Use when**: You want a specific filename
-
-### Custom Directory
-
-```bash
-# Custom output directory
-uv run python scripts/convert_activities_in_sheets_to_JSON.py --output-dir /path/to/custom/dir
-```
-- **Output**: Custom directory location
-- **Use when**: You need output in a different location
-
-### Skip Backup
-
-```bash
-# Skip backup when overwriting (not recommended)
-npm run generate-activities -- --replace-default --no-backup
-```
-- **Use when**: You're absolutely sure you don't need a backup
-
-### Local CSV File
-
-```bash
-# Use local CSV file instead of Google Sheets
-uv run python scripts/convert_activities_in_sheets_to_JSON.py path/to/activities.csv
-```
-- **Use when**: Working with local CSV files instead of Google Sheets
-
-### Help and Options
-
-```bash
-# See all available options
-uv run python scripts/convert_activities_in_sheets_to_JSON.py --help
+python create_translation_json.py --spreadsheet-id YOUR_SPREADSHEET_ID --sheet-gid YOUR_SHEET_GID --output custom/path/output.json --category-column "YourCategoryColumnName" --no-backup
 ```
 
-## Step-by-Step Workflow
+### Command Line Arguments
 
-### 1. Edit the Google Sheet
-- Go to your `finitude_activities_ram` sheet
-- Add new activities or modify existing ones
-- Ensure required columns (name, category, frequency) are filled
-- Use `age_end` when you want activities to stop at a specific age
+- `--spreadsheet-id`: The ID of your Google Spreadsheet (default: the example spreadsheet)
+- `--sheet-gid`: The GID of the specific sheet (tab) within the spreadsheet (default: "0")
+- `--output`: Path to the output JSON file (default: "src/data/cards/vegan-phrases.json")
+- `--no-backup`: Disable automatic backup of existing file (default: backup is enabled)
+- `--category-column`: Name of the category column in the spreadsheet (default: "Category")
 
-### 2. Test Your Changes
-```bash
-# Dry run to validate data
-npm run generate-activities -- --dry-run
-```
-- Check console output for validation errors
-- Verify activities have correct `flexible_end` values
-- Look for "Setting flexible_end=False" messages for activities with `age_end`
+### Example Spreadsheet Format
 
-### 3. Generate Activities
-```bash
-# Generate to safe location
-npm run generate-activities
-```
-- Creates `src/data/activities/imported-activities.json`
-- Review the generated file structure
+| Language 1 | English Phrase | Language 2 | Translation | Category | Tags |
+|------------|---------------|------------|-------------|----------|------|
+| English    | I am vegan    | Spanish    | Soy vegano/a | restaurant | dining,basics |
+| English    | No meat please | French    | Pas de viande s'il vous plaît | restaurant | dining |
 
-### 4. Integrate with App
-Option A: **Use imported file directly**
-```javascript
-import activities from './src/data/activities/imported-activities.json'
-```
+### ID Generation
 
-Option B: **Replace default activities**
-```bash
-# Replace default file (with backup)
-npm run generate-activities -- --replace-default
-```
+Each card gets a unique ID generated from:
+- The language codes (first 2 letters of each language)
+- A sanitized version of the phrase
+- The row number
 
-### 5. Test in App
-- Run the app locally to verify new activities appear correctly
-- Check that icons, colors, and age ranges display as expected
-- Verify `flexible_end=false` activities show age limits
+For example: `vegan-en-es-i-am-vegan-1`
 
-## Output Structure
+This makes it easy to identify which languages are involved in each translation pair.
 
-The script generates proper JSON structure matching the app's requirements:
+### Output Format
+
+The script generates a JSON file following the format documented in `/docs/Cards-Format.md`.
+
+Example output:
 
 ```json
-{
-  "activities": [
-    {
-      "id": "morning_coffee",
-      "name": "Morning Coffee",
-      "category": "routine",
-      "description": "Daily caffeine ritual",
-      "frequency": {
-        "times": 365,
-        "period": "year"
-      },
-      "age_range": {
-        "start": 18,
-        "end": null,
-        "flexible_end": true
-      },
-      "display": {
-        "icon": "☕",
-        "color": "#4A90E2"
-      },
-      "metadata": {
-        "user_created": true,
-        "is_active": true,
-        "created_at": "2025-07-15T16:04:02.879277",
-        "source": "csv_import"
-      }
+[
+  {
+    "id": "vegan-en-es-i-am-vegan-1",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Spanish",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Español",
+      "content": "Soy vegano/a. No como productos de origen animal.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T18:30:00Z",
+      "tags": ["vegan", "restaurant", "basics"]
     }
-  ],
-  "metadata": {
-    "version": "2.0",
-    "created_at": "2025-07-15T16:04:02.880735",
-    "last_updated": "2025-07-15T16:04:02.880736",
-    "total_activities": 40,
-    "source": "csv_import",
-    "generated_by": "convert_activities_in_sheets_to_JSON.py"
   }
-}
+]
 ```
 
-## Console Output Explained
+### Backup System
 
-When you run the script, you'll see detailed output like:
-
-```
-✓ Processed: Books Read (ages 10-75, flexible_end=False, active=True, user_created=True)
-Info: Setting flexible_end=False for Books Read due to age_end=75
-```
-
-This tells you:
-- **Activity name**: "Books Read"
-- **Age range**: 10-75 years old
-- **flexible_end=False**: Activity stops at age 75 (not life expectancy)
-- **active=True**: Activity is enabled
-- **user_created=True**: User-created activity
-
-## Example Google Sheets Entry
+The script automatically backs up existing files before overwriting them:
 
 ```
-name,category,frequency,description,icon,age_start,age_end,color,is_active,user_created
-"Family Game Night",social,weekly,"Board games and laughter",🎲,6,,#E74C3C,true,true
-"College Courses",learning,32/year,"University semester courses",🎓,18,22,,true,true
-"Retirement Planning",work,1/year,"Annual financial review",💼,40,65,,true,true
-"Morning Coffee",routine,daily,"Daily caffeine ritual",☕,18,,,true,true
+src/data/cards/vegan-phrases.json.backup.1626914532
 ```
 
-## Troubleshooting
+You can disable this with the `--no-backup` flag.
 
-**"Error reading from Google Sheets"**
-- Ensure sheet is set to "Anyone with link can view"
-- Check internet connection
-- Verify Google Sheets URL is correct in script
+### Error Handling
 
-**"Missing required columns"**
-- Your sheet must have columns named exactly: `name`, `category`, `frequency`
-- Column names are case-sensitive
+The script provides helpful error messages for common issues:
+- Missing required columns
+- Unable to access Google Sheet
+- Invalid data formats
 
-**"Invalid frequency"**
-- Check frequency format matches accepted patterns
-- Script will default to "1/year" if it can't parse
+### Notes
 
-**"Available columns" shows missing columns**
-- Check your Google Sheets header row matches expected format
-- Ensure no typos in column names
-
-## File Locations
-
-- **Script**: `scripts/convert_activities_in_sheets_to_JSON.py`
-- **Default output**: `src/data/activities/imported-activities.json`
-- **Default activities**: `src/data/activities/default-activities.json`
-- **Backups**: `src/data/activities/default-activities.backup.TIMESTAMP.json`
-
-## Notes
-
-- The script generates IDs automatically from activity names
-- All CSV-imported activities have `user_created: true` unless specified otherwise
-- Timestamps are added to track when activities were imported
-- The script validates data and provides helpful error messages
-- Backup files are created with timestamps for easy identification
-- Age ranges with `age_end` automatically set `flexible_end=false`
+- The script creates the output directory if it doesn't exist
+- Tags are automatically generated based on category if not provided
+- Cards are generated in the same order as they appear in the spreadsheet
