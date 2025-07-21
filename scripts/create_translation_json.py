@@ -42,14 +42,18 @@ def generate_translation_cards(spreadsheet_id, sheet_gid, output_path="src/data/
         print(f"Detected header: {header}")
 
         # Get column indices based on header names
-        required_columns = ["Language 1", "English Phrase", "Language 2", "Translation"]
+        required_columns = ["Language 1", "Phrase 1", "Language 2", "Translation"]
         column_indices = {}
         
         for col_name in required_columns:
             try:
                 column_indices[col_name] = header.index(col_name)
             except ValueError:
-                raise ValueError(f"Missing required column: '{col_name}'")
+                # Try alternative column name for backwards compatibility
+                if col_name == "Phrase 1" and "English Phrase" in header:
+                    column_indices[col_name] = header.index("English Phrase")
+                else:
+                    raise ValueError(f"Missing required column: '{col_name}'")
         
         # Check for optional category column
         category_col_index = None
@@ -77,12 +81,12 @@ def generate_translation_cards(spreadsheet_id, sheet_gid, output_path="src/data/
                 continue
 
             language1_name = row[column_indices["Language 1"]].strip()
-            english_phrase = row[column_indices["English Phrase"]].strip()
+            phrase1 = row[column_indices["Phrase 1"]].strip()
             language2_name = row[column_indices["Language 2"]].strip()
             translation = row[column_indices["Translation"]].strip()
 
             # Skip row if essential content is missing
-            if not english_phrase or not translation:
+            if not phrase1 or not translation:
                 print(f"Skipping row {i+2} due to missing phrase or translation.")
                 continue
 
@@ -101,7 +105,7 @@ def generate_translation_cards(spreadsheet_id, sheet_gid, output_path="src/data/
             tags = list(dict.fromkeys(tags))
 
             # Create a sanitized ID based on languages and the phrase
-            base_id = re.sub(r'[^a-z0-9]', '-', english_phrase.lower())
+            base_id = re.sub(r'[^a-z0-9]', '-', phrase1.lower())
             base_id = re.sub(r'-+', '-', base_id)  # Replace multiple hyphens with a single one
             base_id = base_id[:20].strip('-')  # Limit length and trim trailing hyphens
             
@@ -118,7 +122,7 @@ def generate_translation_cards(spreadsheet_id, sheet_gid, output_path="src/data/
                 "language2": language2_name,
                 "frontContent": {
                     "title": language1_name,
-                    "content": english_phrase,
+                    "content": phrase1,
                     "imageUrl": None
                 },
                 "backContent": {
@@ -143,7 +147,7 @@ def generate_translation_cards(spreadsheet_id, sheet_gid, output_path="src/data/
         print("Please ensure the Google Sheet is published to the web and accessible (Viewer access).")
     except ValueError as e:
         print(f"Error processing CSV data: {e}")
-        print("Please ensure your Google Sheet has the required columns: 'Language 1', 'English Phrase', 'Language 2', and 'Translation'.")
+        print("Please ensure your Google Sheet has the required columns: 'Language 1', 'Phrase 1', 'Language 2', and 'Translation'.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 

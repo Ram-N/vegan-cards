@@ -16,7 +16,7 @@ The `create_translation_json.py` script reads data from a Google Sheet and creat
 
 3. A Google Sheet with the following columns:
    - `Language 1` - The primary language name (e.g., "English")
-   - `English Phrase` - The phrase in the primary language
+   - `Phrase 1` - The phrase in the primary language
    - `Language 2` - The secondary language name (e.g., "Spanish")
    - `Translation` - The translated phrase
    - `Category` (optional) - The category for the phrase (e.g., "restaurant", "shopping")
@@ -50,8 +50,8 @@ python create_translation_json.py --spreadsheet-id YOUR_SPREADSHEET_ID --sheet-g
 
 ### Example Spreadsheet Format
 
-| Language 1 | English Phrase | Language 2 | Translation | Category | Tags |
-|------------|---------------|------------|-------------|----------|------|
+| Language 1 | Phrase 1 | Language 2 | Translation | Category | Tags |
+|------------|----------|------------|-------------|----------|------|
 | English    | I am vegan    | Spanish    | Soy vegano/a | restaurant | dining,basics |
 | English    | No meat please | French    | Pas de viande s'il vous plaît | restaurant | dining |
 
