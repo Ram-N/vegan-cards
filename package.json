@@ -1,8 +1,8 @@
 {
-  "name": "finitude",
+  "name": "vegan-cards",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": "https://YOUR-USERNAME.github.io/vegan-cards",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

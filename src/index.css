@@ -16,57 +16,13 @@ code {
     monospace;
 }
 
-/* Custom card styles for different activity types */
-.financial-card-front {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  box-shadow: none;
-}
-
-.financial-card-back {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  max-height: 100%;
-}
-
-.financial-card-back h2 {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.financial-card-back .text-sm {
-  font-size: 0.75rem;
-}
-
-.financial-card-back .py-2 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
-.financial-card-back .space-y-3 > * + * {
-  margin-top: 0.5rem;
-}
-
-/* Card flip animations and styles */
-/* Card border styles */
-.card-border {
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.card-border-quote {
-  border: 1px solid rgba(251, 146, 60, 0.2);
-}
-
-/* Financial card styles */
-.financial-card-front,
-.financial-card-back {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-}
-
-/* Card flip animation */
+/* Card flip animation and styles */
 .card-container {
   position: relative;
   width: 100%;
   height: 250px;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .card {
@@ -102,19 +58,38 @@ code {
   transform: rotateY(180deg);
 }
 
-/* Financial card overrides */
-.financial-card .card-front {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  box-shadow: none;
+/* Card type variants */
+.card-blue .card-front,
+.card-blue .card-back {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
 }
 
-.financial-card .card-back {
+.card-green .card-front,
+.card-green .card-back {
   background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
 }
 
-/* Quote card overrides */
-.quote-card .card-front,
-.quote-card .card-back {
+.card-amber .card-front,
+.card-amber .card-back {
   background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+}
+
+.card-purple .card-front,
+.card-purple .card-back {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+}
+
+.card-pink .card-front,
+.card-pink .card-back {
+  background: linear-gradient(135deg, #fdf2f8 0%, #fbcfe8 100%);
+}
+
+/* Card theme for vegan cards */
+.card-vegan .card-front {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.card-vegan .card-back {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
 }
 
