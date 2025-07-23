@@ -1,0 +1,212 @@
+[
+  {
+    "id": "vegan-1",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Spanish",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, dairy, eggs, or honey.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Español",
+      "content": "Soy vegano/a. No como productos de origen animal, incluyendo carne, lácteos, huevos o miel.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T00:00:00Z",
+      "tags": ["vegan", "restaurant", "basics"]
+    }
+  },
+  {
+    "id": "vegan-2",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Spanish",
+    "frontContent": {
+      "title": "English",
+      "content": "Does this dish contain any animal products? (meat, fish, dairy, eggs, honey)",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Español",
+      "content": "¿Este plato contiene productos animales? (carne, pescado, lácteos, huevos, miel)",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T00:00:00Z",
+      "tags": ["vegan", "restaurant", "question"]
+    }
+  },
+  {
+    "id": "vegan-3",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Spanish",
+    "frontContent": {
+      "title": "English",
+      "content": "Can you prepare this dish without meat/dairy/eggs?",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Español",
+      "content": "¿Puede preparar este plato sin carne/lácteos/huevos?",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T00:00:00Z",
+      "tags": ["vegan", "restaurant", "request"]
+    }
+  },
+  {
+    "id": "vegan-4",
+    "type": "translation",
+    "category": "ingredients",
+    "language1": "English",
+    "language2": "Spanish",
+    "frontContent": {
+      "title": "English",
+      "content": "I cannot eat: meat, fish, poultry, seafood, eggs, dairy, cheese, milk, cream, butter, or honey.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Español",
+      "content": "No puedo comer: carne, pescado, aves, mariscos, huevos, lácteos, queso, leche, crema, mantequilla o miel.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T00:00:00Z",
+      "tags": ["vegan", "ingredients", "allergies"]
+    }
+  },
+  {
+    "id": "vegan-5",
+    "type": "translation",
+    "category": "shopping",
+    "language1": "English",
+    "language2": "Spanish",
+    "frontContent": {
+      "title": "English",
+      "content": "Do you have any vegan options/products?",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Español",
+      "content": "¿Tiene opciones/productos veganos?",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T00:00:00Z",
+      "tags": ["vegan", "shopping", "question"]
+    }
+  },
+  {
+    "id": "vegan-6",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "French",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, dairy, eggs, or honey.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Français",
+      "content": "Je suis végétalien(ne). Je ne mange pas de produits d'origine animale, y compris la viande, les produits laitiers, les œufs ou le miel.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T00:00:00Z",
+      "tags": ["vegan", "restaurant", "basics"]
+    }
+  },
+  {
+    "id": "vegan-7",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Italian",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, dairy, eggs, or honey.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Italiano",
+      "content": "Sono vegano/a. Non mangio prodotti di origine animale, inclusi carne, latticini, uova o miele.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T00:00:00Z",
+      "tags": ["vegan", "restaurant", "basics"]
+    }
+  },
+  {
+    "id": "vegan-8",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "German",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, dairy, eggs, or honey.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Deutsch",
+      "content": "Ich bin Veganer/in. Ich esse keine tierischen Produkte, einschließlich Fleisch, Milchprodukte, Eier oder Honig.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T00:00:00Z",
+      "tags": ["vegan", "restaurant", "basics"]
+    }
+  },
+  {
+    "id": "vegan-9",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Portuguese",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, dairy, eggs, or honey.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Português",
+      "content": "Sou vegano/a. Não como produtos de origem animal, incluindo carne, laticínios, ovos ou mel.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T00:00:00Z",
+      "tags": ["vegan", "restaurant", "basics"]
+    }
+  },
+  {
+    "id": "vegan-10",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Japanese",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, dairy, eggs, or honey.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "日本語",
+      "content": "私はビーガンです。肉、乳製品、卵、蜂蜜など、動物性食品は一切食べません。",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T00:00:00Z",
+      "tags": ["vegan", "restaurant", "basics"]
+    }
+  }
+]

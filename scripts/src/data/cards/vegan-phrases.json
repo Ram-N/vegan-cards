@@ -1,0 +1,314 @@
+[
+  {
+    "id": "vegan-en-fr-does-it-contain-eggs-1",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "French",
+    "frontContent": {
+      "title": "English",
+      "content": "Does it contain eggs?",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "French",
+      "content": "Contient-il des œufs ?",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-fr-no-eggs-2",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "French",
+    "frontContent": {
+      "title": "English",
+      "content": "No eggs",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "French",
+      "content": "Sans œufs",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-fr-no-eggs-no-fish-no-m-3",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "French",
+    "frontContent": {
+      "title": "English",
+      "content": "No eggs, no fish, no meat",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "French",
+      "content": "Sans œufs, sans poisson, sans viande",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-fr-no-eggs-but-milk-and-4",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "French",
+    "frontContent": {
+      "title": "English",
+      "content": "No eggs, but milk and cheese are okay",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "French",
+      "content": "Sans œufs, mais le lait et le fromage c'est bon",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-fr-is-it-made-with-eggs-5",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "French",
+    "frontContent": {
+      "title": "English",
+      "content": "Is it made with eggs?",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "French",
+      "content": "Est-ce fait avec des œufs ?",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-fr-does-it-contain-any-6",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "French",
+    "frontContent": {
+      "title": "English",
+      "content": "Does it contain any lard?",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "French",
+      "content": "Contient-il du saindoux ?",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-sp-can-you-prepare-this-7",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Spanish",
+    "frontContent": {
+      "title": "English",
+      "content": "Can you prepare this dish without meat/dairy/eggs?",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Spanish",
+      "content": "¿Puede preparar este plato sin carne/lácteos/huevos?",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-sp-do-you-have-any-vega-8",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Spanish",
+    "frontContent": {
+      "title": "English",
+      "content": "Do you have any vegan options/products?",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Spanish",
+      "content": "¿Tiene opciones/productos veganos?",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-fr-i-am-vegan-i-don-t-e-9",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "French",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, and eggs.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "French",
+      "content": "Je suis végétalien(ne). Je ne mange pas de produits d'origine animale y compris la viande les produits laitiers les œufs ou le miel.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-it-i-am-vegan-i-don-t-e-10",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Italian",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, and eggs.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Italian",
+      "content": "Sono vegano/a. Non mangio prodotti di origine animale inclusi carne latticini uova o miele.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-ge-i-am-vegan-i-don-t-e-11",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "German",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, and eggs.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "German",
+      "content": "Ich bin Veganer/in. Ich esse keine tierischen Produkte einschließlich Fleisch Milchprodukte Eier oder Honig.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-po-i-am-vegan-i-don-t-e-12",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Portuguese",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, and eggs.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Portuguese",
+      "content": "Sou vegano/a. Não como produtos de origem animal incluindo carne laticínios ovos ou mel.",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  },
+  {
+    "id": "vegan-en-ja-i-am-vegan-i-don-t-e-13",
+    "type": "translation",
+    "category": "restaurant",
+    "language1": "English",
+    "language2": "Japanese",
+    "frontContent": {
+      "title": "English",
+      "content": "I am vegan. I don't eat any animal products including meat, and eggs.",
+      "imageUrl": null
+    },
+    "backContent": {
+      "title": "Japanese",
+      "content": "私はビーガンです。肉 乳製品 卵 蜂蜜など 動物性食品は一切食べません。",
+      "imageUrl": null
+    },
+    "metadata": {
+      "created": "2025-07-21T20:24:00Z",
+      "tags": [
+        "vegan",
+        "restaurant"
+      ]
+    }
+  }
+]
