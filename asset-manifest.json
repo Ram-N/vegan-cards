@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/vegan-cards/static/css/main.e87cb56a.css",
-    "main.js": "/vegan-cards/static/js/main.c4d14e5f.js",
+    "main.css": "/vegan-cards/static/css/main.4ae322d1.css",
+    "main.js": "/vegan-cards/static/js/main.0841c3dd.js",
     "static/js/453.f3aead63.chunk.js": "/vegan-cards/static/js/453.f3aead63.chunk.js",
     "index.html": "/vegan-cards/index.html",
-    "main.e87cb56a.css.map": "/vegan-cards/static/css/main.e87cb56a.css.map",
-    "main.c4d14e5f.js.map": "/vegan-cards/static/js/main.c4d14e5f.js.map",
+    "main.4ae322d1.css.map": "/vegan-cards/static/css/main.4ae322d1.css.map",
+    "main.0841c3dd.js.map": "/vegan-cards/static/js/main.0841c3dd.js.map",
     "453.f3aead63.chunk.js.map": "/vegan-cards/static/js/453.f3aead63.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e87cb56a.css",
-    "static/js/main.c4d14e5f.js"
+    "static/css/main.4ae322d1.css",
+    "static/js/main.0841c3dd.js"
   ]
 }
